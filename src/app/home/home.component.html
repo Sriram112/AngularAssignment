@@ -1,13 +1,17 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <img src="{{ imageSrc }}" alt="{{ imageAlt }}" /><br /><br />
-    <a routerLink="login">Login</a><br />
-    <router-outlet></router-outlet><br />
-    <a routerLink="user">All Users</a><br />
-    <router-outlet></router-outlet>
-  </body>
-</html>
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/45.jpg');
+    height: 750px;
+  "
+>
+  <br />
+  <span class="id">
+    <button class="btn btn-Secondary">
+      <br />
+      <a routerLink="/login">Login</a>
+    </button>
+    <br />
+    <router-outlet></router-outlet
+  ></span>
+</div>

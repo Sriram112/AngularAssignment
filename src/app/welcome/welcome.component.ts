@@ -1,6 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-welcome',
@@ -9,9 +8,9 @@ import { LoginComponent } from '../login/login.component';
 })
 export class WelcomeComponent implements OnInit {
 
-  @Input() msgFromParent= '';
+  @Input() user = '';
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
   }

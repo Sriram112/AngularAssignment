@@ -1,45 +1,32 @@
-<h2>Login Form</h2>
-<br /><br />
-<form
-  #userLogin="ngForm"
-  [formGroup]="loginForm"
-  (ngSubmit)="loginUser(userLogin.value)"
-  [ngModel]
->
-  <input
-    type="text"
-    name="username"
-    placeholder="Enter Username"
-    formControlName="user"
-    [ngModel]
-  />
+<form #userlogin="ngForm" (ngSubmit)="onclickjasw(userlogin.value)" [ngModel]>
   <br />
-  <span style="color: red" *ngIf="user && user.invalid && user.touched"
-    >This field is not valid</span
-  >
   <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  required placeholder="Enter Username" name="name" [ngModel] /><br /><br />
   <input
     type="password"
+    required
     name="password"
     placeholder="Enter Password"
-    formControlName="password"
     [ngModel]
-  />
-  <br />
-  <span
-    style="color: red"
-    *ngIf="password && password.invalid && password.touched"
-    >This field is not valid</span
-  >
-  <br /><br />
-  <button
-    class="btn btn secondary"
-    type="button"
-    (click)="loginUser(userLogin.value)"
-  >
-    Login
-  </button>
+  /><br />
+
+  <span class="input-group-btn">
+    <h2>
+      <button
+        class="btn btn-primary"
+        type="button"
+        (click)="onclickjasw(userlogin.value)"
+      >
+        Login
+      </button>
+    </h2>
+  </span>
 </form>
-<br /><br /><br />
-<app-welcome *ngIf="k" [msgFromParent]="username"></app-welcome>
+<br />
+<app-welcome *ngIf="k" []="name"></app-welcome>
 <router-outlet></router-outlet>

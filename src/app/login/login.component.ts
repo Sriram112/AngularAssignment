@@ -1,6 +1,6 @@
 import { Component,EventEmitter,OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -8,36 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   @Output() newItemEvent = new EventEmitter();
-  public k=true;
-  public username:any
-
-  constructor(private router:Router) { }
+  public k=false
+  public name:any
+  
+  constructor() { }
 
   ngOnInit(): void {
+    
   }
 
-  loginForm = new FormGroup({
-    user: new FormControl('', [Validators.required]),
-    password : new FormControl('',[Validators.required, Validators.minLength(5)]),
-  })
-  loginUser(data:any){
-    console.warn(this.loginForm.value);
-    if(data.user == data.password)
+  onclickjasw(data:any)
+{
+    if(data.name=="Sriram" && data.password=="Sriram")
     {
       this.k=true;
-      this.username=data.user
-      this.newItemEvent.emit(this.k)
+      this.name=data.name
+      alert("welcome "+data.name) 
     }
     else{
-      alert("Not Matched.")
+      alert("Wrong Details")
     }
-  }
-  get user(){
-    return this.loginForm.get('username')
-  }
-  get password(){
-    return this.loginForm.get('password')
-  }
+}
+
 }
